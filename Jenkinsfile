@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     stages{
-        stage{
+        stage("Conditional wrapper"){
             when{
                 expression{
                     return env.BRANCH_NAME == 'main' || env.BRANCH_NAME.startsWith('feature')
